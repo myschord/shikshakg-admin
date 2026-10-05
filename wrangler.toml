@@ -1,0 +1,14 @@
+name = "shikshakg-admin"
+compatibility_date = "2026-08-22"
+
+# Kept for the classic Cloudflare Pages dashboard flow, in case the project
+# ever gets reconnected that way — that path reads this key and ignores
+# [assets] below. Must stay above any [section] header: TOML scopes bare
+# keys to the nearest preceding table header, not to the top level.
+pages_build_output_dir = "out"
+
+# Deploys as a Workers project (build CI runs `npx wrangler deploy`) using
+# Workers' static-assets support: no server code, no `main` entrypoint,
+# just the static export served directly from the CDN.
+[assets]
+directory = "out"

@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "react-toastify/dist/ReactToastify.css";
+
+/* Same palette as the student website, with its contrast-checked (WCAG AA) shades. */
+:root {
+  --color-white: #ffffff;
+  --color-brand: #01b4d2;
+  --color-primary: #07758f;
+  --color-primary-dark: #055a70;
+  --color-primary-light: #3fd2ea;
+  --color-navy: #0b1f3a;
+  --color-bg-tint: #f4fbfd;
+  --color-border-tint: #e8f9fc;
+  --color-line: #d5e3ea;
+  --color-ink: #0b1f3a;
+  --color-ink-muted: #5b6b82;
+  --color-success: #16a34a;
+  --color-success-text: #166534;
+  --color-success-fill: #15803d;
+  --color-warning: #f59e0b;
+  --color-warning-text: #92400e;
+  --color-error: #ef4444;
+  --color-error-text: #b91c1c;
+  --color-error-fill: #b91c1c;
+}
+
+@theme inline {
+  --color-white: var(--color-white);
+  --color-brand: var(--color-brand);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
+  --color-navy: var(--color-navy);
+  --color-bg-tint: var(--color-bg-tint);
+  --color-border-tint: var(--color-border-tint);
+  --color-line: var(--color-line);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-success: var(--color-success);
+  --color-success-text: var(--color-success-text);
+  --color-success-fill: var(--color-success-fill);
+  --color-warning: var(--color-warning);
+  --color-warning-text: var(--color-warning-text);
+  --color-error: var(--color-error);
+  --color-error-text: var(--color-error-text);
+  --color-error-fill: var(--color-error-fill);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-bg-tint);
+  color: var(--color-ink);
+}
+
+/* One visible keyboard focus style everywhere. */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.Toastify__toast-container {
+  --toastify-color-light: var(--color-white);
+  --toastify-color-success: var(--color-success);
+  --toastify-color-warning: var(--color-warning);
+  --toastify-color-error: var(--color-error);
+  --toastify-color-info: var(--color-primary);
+  --toastify-text-color-light: var(--color-ink);
+  --toastify-font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

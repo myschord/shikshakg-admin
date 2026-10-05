@@ -1,0 +1,35 @@
+{
+  "name": "shikshakg-admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3100",
+    "build": "next build && node scripts/write-headers.mjs",
+    "serve": "node scripts/serve-out.mjs",
+    "typecheck": "tsc --noEmit",
+    "api:pull": "curl -s -o api/openapi.json http://localhost:8020/openapi.json",
+    "api:types": "npx -y -p typescript@5.9 -p openapi-typescript@7 openapi-typescript api/openapi.json -o src/lib/api/schema.d.ts",
+    "e2e": "playwright test"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.104.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.32.0",
+    "next": "16.3.8",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-toastify": "^11.1.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "26.2.0",
+    "@types/react": "19.2.18",
+    "tailwindcss": "^4",
+    "typescript": "7.0.2"
+  }
+}
